@@ -108,12 +108,35 @@
          * Manual call when show() complete
          * @event onVisible
          * @for MagicBox
+         * @example
+         *      // the onShow event passes this function as an argument, so
+         *      // you can call it once the showing action completes:
+         *      magicBoxInstance.setHandler('onShow', function(onVisible) {
+         *          // note that the onVisible handler is passed as an argument
+         *          var t = 0;
+         *          setTimeout( function() { 
+         *              console.log("Alien attack!");
+         *              if(t >= 10) onVisible(); // call once onShow handler is complete
+         *              else arguments.callee();
+         *          }, 10000);
+         *      }
          */
         onVisible: defaultHandler,
         /**
          * Manual call when hide() complete
          * @event onHidden
          * @for MagicBox
+         *      // the onHide event passes this function as an argument, so
+         *      // you can call it once the hiding action completes:
+         *      magicBoxInstance.setHandler('onHide', function(onHidden) {
+         *          // note that the onHidden handler is passed as an argument
+         *          var t = 0;
+         *          setTimeout( function() { 
+         *              console.log("Alien defense!");
+         *              if(t >= 10) onHidden(); // call once onHide handler is complete
+         *              else arguments.callee();
+         *          }, 10000);
+         *      }
          */
         onHidden: defaultHandler,
         /**
