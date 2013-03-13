@@ -145,12 +145,30 @@
     /**
      * The MagicBox class.  Wraps an element with Magic Box properties!
      *
+     *      // first, make an element into a MagicBox
+     *      var magicBoxInstance = new MagicBox(element);
+     *
+     *      // next, add an event handler:
+     *      magicBoxInstance.setHandler('onShow', function(f) {
+     *          // because visibility is determined by a callback, we can do
+     *          // a timeout (for animation, perhaps)
+     *          setTimeout( function() {
+     *              console.log('showing the Magic Box!');
+     *              f(); // onVisible() callback
+     *          }, 1000);
+     *      }
+     *
      *      // the context for all events is the MagicBox instance, so:
      *      magicBoxInstance.setHandler('onVisible', function() {
      *          // 'this' is the magicBoxInstance
      *          this.hide();                                    // hide it
      *          this.box().parentNode.removeChild(this.box());  // remove it
      *      });
+     *
+     *      // finally, do something:
+     *      magicBoxInstance.show(); // will call the onShow() handler, which
+     *                               // calls the onVisible() handler via the
+     *                               // callback
      *
      * @class MagicBox
      * @constructor
@@ -332,7 +350,7 @@
         },
 
         /**
-         * Put the content back into the Magic Box!
+         * Hide the Magic Box!
          *
          * @method hide
          * @chainable
