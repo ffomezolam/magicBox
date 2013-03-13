@@ -111,6 +111,9 @@
          * @example
          *      // the onShow event passes this function as an argument, so
          *      // you can call it once the showing action completes:
+         *      magicBoxInstance.setHandler('onVisible', function() {
+         *          console.log("Prepare all defenses!");
+         *      });
          *      magicBoxInstance.setHandler('onShow', function(onVisible) {
          *          // note that the onVisible handler is passed as an argument
          *          setTimeout( function() { 
@@ -127,6 +130,9 @@
          * @example
          *      // the onHide event passes this function as an argument, so
          *      // you can call it once the hiding action completes:
+         *      magicBoxInstance.setHandler('onHidden', function() {
+         *          console.log("Yay, we're safe!");
+         *      });
          *      magicBoxInstance.setHandler('onHide', function(onHidden) {
          *          // note that the onHidden handler is passed as an argument
          *          setTimeout( function() { 
