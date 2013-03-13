@@ -126,6 +126,7 @@
          * Manual call when hide() complete
          * @event onHidden
          * @for MagicBox
+         * @example
          *      // the onHide event passes this function as an argument, so
          *      // you can call it once the hiding action completes:
          *      magicBoxInstance.setHandler('onHide', function(onHidden) {
