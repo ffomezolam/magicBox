@@ -113,11 +113,9 @@
          *      // you can call it once the showing action completes:
          *      magicBoxInstance.setHandler('onShow', function(onVisible) {
          *          // note that the onVisible handler is passed as an argument
-         *          var t = 0;
          *          setTimeout( function() { 
          *              console.log("Alien attack!");
-         *              if(t >= 10) onVisible(); // call once onShow handler is complete
-         *              else arguments.callee();
+         *              onVisible(); // call once onShow handler is complete
          *          }, 10000);
          *      }
          */
@@ -131,11 +129,9 @@
          *      // you can call it once the hiding action completes:
          *      magicBoxInstance.setHandler('onHide', function(onHidden) {
          *          // note that the onHidden handler is passed as an argument
-         *          var t = 0;
          *          setTimeout( function() { 
          *              console.log("Alien defense!");
-         *              if(t >= 10) onHidden(); // call once onHide handler is complete
-         *              else arguments.callee();
+         *              onHidden(); // call once onHide handler is complete
          *          }, 10000);
          *      }
          */
